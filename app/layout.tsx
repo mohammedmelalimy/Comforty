@@ -1,8 +1,9 @@
-import { Inter } from 'next/font/google';
+import { Inter, Splash } from 'next/font/google';
 import './globals.css';
 import Navbar from './_components/common/Navbar';
 import { Toaster } from '@/components/ui/sonner';
 import { Metadata } from 'next';
+import SplashScreen from './_components/ui/Splach';
 
 const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         <Toaster position="top-center" />
+        <SplashScreen />
         {children}
       </body>
     </html>

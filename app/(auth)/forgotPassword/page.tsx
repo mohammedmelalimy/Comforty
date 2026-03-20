@@ -26,7 +26,7 @@ const Page = () => {
 
   const onSubmit = async (values: ForgetForm) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/auth/forgotPasswords`, {
+      const res = await fetch(`https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values)

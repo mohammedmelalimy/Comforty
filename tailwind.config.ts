@@ -10,14 +10,6 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif']
       }
-    },
-    container: {
-      center: true, // centers container automatically
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem'
-      }
     }
   },
   plugins: []

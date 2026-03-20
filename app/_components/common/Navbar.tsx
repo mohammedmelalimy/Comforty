@@ -3,64 +3,76 @@
 import React from 'react';
 import Announcement from '../ui/Announcement';
 import { Heart, ShoppingCart, User } from 'lucide-react';
-import DropdownMenuIcons from '../ui/UserDrop';
-import { Button } from '../../../components/ui/button';
 import Link from 'next/link';
+import Links from '../ui/Links';
+import DropdownMenuIcons from '../ui/UserDrop';
 
 const Navbar = () => {
   return (
-    <>
+    <div className="w-full border-b bg-gray-200 shadow-sm sticky top-0 z-50">
       <Announcement />
-
-      <div className="w-full bg-gray-200 shadow-md">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between py-3 px-4 text-sm text-black">
+      <nav className="w-full border-b bg-gray-200 shadow-sm">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 py-2 px-4">
           {/* Logo */}
           <Link
-            href={'/'}
-            className="flex gap-2 items-center font-bold text-lg cursor-pointer hover:text-sky-800 mb-2 sm:mb-0"
+            href="/"
+            className="flex items-center gap-2 font-bold text-xl text-gray-800 hover:text-teal-700 transition"
           >
             <img src="/assets/Logo.svg" alt="logo" className="h-8 w-8" />
             Comforty
           </Link>
 
-          {/* Search */}
-          <div className="flex justify-center flex-1 mb-2 sm:mb-0">
+          {/* Search Bar */}
+          <div className="flex-1 flex justify-center w-full">
             <input
               type="text"
-              placeholder="Search..."
-              className="w-full sm:w-1/2 p-2 bg-gray-50 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
+              placeholder="Search for furniture, decor, lighting..."
+              className="w-full sm:w-[60%] px-4 py-2 rounded-lg border border-gray-300 bg-gray-50 
+              shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 transition"
             />
           </div>
 
-          {/* Icons & Cart */}
+          {/* Right Menu */}
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-1 cursor-pointer bg-sky-200 p-2 rounded hover:text-sky-800 transition-transform transform hover:scale-105">
-              {' '}
+            {/* Cart */}
+            <Link
+              href="/cart"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 
+              hover:bg-gray-200 text-gray-700 transition"
+            >
               <ShoppingCart className="h-5 w-5" />
-              <span>Cart</span>
-            </div>
-            <Heart className="h-5 w-5 cursor-pointer hover:text-red-500 transition-colors" />
+              <span className="font-medium">Cart</span>
+            </Link>
+
+            {/* Wishlist */}
+            <Link href="/wishlist">
+              <Heart className="h-5 w-5 text-gray-700 hover:text-red-500 transition" />
+            </Link>
+
+            <DropdownMenuIcons />
+
+            {/* Sign In */}
             <Link
               href="/login"
-              className="px-6 py-2 bg-teal-600 hover:bg-teal-700 text-white 
-              rounded-lg font-semibold transition-all duration-200 
-              inline-block text-center"
+              className="px-5 py-2 bg-teal-600 text-white rounded-lg 
+              font-semibold hover:bg-teal-700 transition"
             >
               Sign In
             </Link>
 
+            {/* Sign Up */}
             <Link
               href="/register"
-              className="px-6 py-2 border border-black text-black bg-white 
-             hover:bg-gray-100 rounded-lg font-semibold 
-             transition-all duration-200 inline-block text-center"
+              className="px-5 py-2 border border-gray-700 text-gray-800 rounded-lg 
+              font-semibold hover:bg-gray-100 transition"
             >
               Sign Up
             </Link>
           </div>
         </div>
-      </div>
-    </>
+      </nav>
+      <Links />
+    </div>
   );
 };
 

@@ -32,7 +32,7 @@ const Page = () => {
   });
 
   const onSubmit = async (values: resetPassword) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/auth/resetPassword`, {
+    const res = await fetch(`https://ecommerce.routemisr.com/api/v1/auth/resetPassword`, {
       method: 'Put',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(values)

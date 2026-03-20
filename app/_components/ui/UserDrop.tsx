@@ -6,7 +6,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { CreditCardIcon, LogOutIcon, SettingsIcon, User, UserIcon } from 'lucide-react';
+import { LogOutIcon, User, UserIcon } from 'lucide-react';
 
 export default function DropdownMenuIcons() {
   return (
@@ -18,14 +18,6 @@ export default function DropdownMenuIcons() {
         <DropdownMenuItem>
           <UserIcon />
           Profile
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <CreditCardIcon />
-          Billing
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <SettingsIcon />
-          Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">
