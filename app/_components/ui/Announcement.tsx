@@ -3,8 +3,8 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div className=" w-full p-1 bg-indigo-950 font-sans">
-      <div className="container mx-auto px-4 flex items-center justify-between text-sm text-gray-200">
+    <div className=" w-full p-1 bg-black font-sans dark:bg-gray-200">
+      <div className="container mx-auto px-4 flex flex-col gap-5 md:flex-row items-center justify-between text-sm text-gray-200 dark:text-gray-700">
         <p>✔ Free Shipping On All Orders Over $50</p>
         <div className="flex items-center gap-12 cursor-pointer ">
           <select name="lang" id="lang">

@@ -1,9 +1,11 @@
-import { Inter, Splash } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from './_components/common/Navbar';
 import { Toaster } from '@/components/ui/sonner';
 import { Metadata } from 'next';
 import SplashScreen from './_components/ui/Splach';
+import UserProvider from './UserProvider';
+import { ThemeProvider } from './_components/ui/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
@@ -15,12 +17,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" suppressHydrationWarning className={inter.className}>
       <body>
-        <Navbar />
-        <Toaster position="top-center" />
-        <SplashScreen />
-        {children}
+        <ThemeProvider>
+          <UserProvider>
+            <Navbar />
+            <Toaster position="top-center" />
+            <SplashScreen />
+            {children}
+          </UserProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

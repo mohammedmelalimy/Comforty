@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-
+import { signIn } from 'next-auth/react';
 const loginSchema = z.object({
   email: z.email('Invalid email address'),
   password: z
@@ -32,14 +32,26 @@ const Page = () => {
   });
 
   const onSubmit = async (values: LoginForm) => {
-    const res = await fetch(`https://ecommerce.routemisr.com/api/v1/auth/signin`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values)
-    });
-    const data = await res.json();
+    // const res = await fetch(`https://ecommerce.routemisr.com/api/v1/auth/signin`, {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(values)
+    // });
+    // const data = await res.json();
 
-    if (data.message === 'success') {
+    // if (data.message === 'success') {
+    //   toast.success('Login successful');
+    //   Router.push('/');
+    // } else {
+    //   toast.error('Invalid Email or Password');
+    // }
+    const data = await signIn('credentials', {
+      email: values.email,
+      password: values.password,
+      redirect: false
+      // callbackUrl: '/'
+    });
+    if (data?.ok) {
       toast.success('Login successful');
       Router.push('/');
     } else {
@@ -111,7 +123,7 @@ const Page = () => {
             {/* Login Button */}
             <Button
               type="submit"
-              className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl text-lg font-semibold transition transform hover:scale-[1.02]"
+              className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl text-lg font-semibold transition transform hover:scale-[1.02] cursor-pointer"
             >
               Login
             </Button>
