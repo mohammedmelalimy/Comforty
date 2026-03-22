@@ -1,6 +1,6 @@
 import Img2 from '@/assets/home-decor-img-11.png';
 import Img1 from '@/assets/home-decor-img-08.png';
-import Img3 from '@/assets/special.png';
+// import Img3 from '@/assets';
 import {
   Carousel,
   CarouselContent,
@@ -15,8 +15,7 @@ export default async function Hero({ lang }: { lang: string }) {
   const dict = await getDictionary(lang);
   const isArabic = lang === 'ar';
 
-  // دمج الصور مع النصوص المترجمة
-  const images = [Img1, Img2, Img3];
+  const images = [Img1, Img2, Img2]; // Replace with actual images for each slide
   const slides = dict.hero.slides.map((slide: any, i: number) => ({
     ...slide,
     img: images[i]
@@ -32,7 +31,7 @@ export default async function Hero({ lang }: { lang: string }) {
         <CarouselContent className="h-full">
           {slides.map((slide: any, i: number) => (
             <CarouselItem key={i} className="h-full">
-              <div className="flex flex-col md:flex-row h-full w-full lg:gap-50 px-8">
+              <div className="flex flex-col md:flex-row h-full w-full px-8">
                 {/* Text Side */}
                 <div
                   className={`w-full md:w-[75%] flex flex-col justify-center p-6 space-y-12 md:space-y-3 order-2 md:order-1 ${isArabic ? 'text-right' : 'text-left'}`}
@@ -65,7 +64,7 @@ export default async function Hero({ lang }: { lang: string }) {
                 </div>
 
                 {/* Image Side */}
-                <div className="w-full md:w-1/2 h-62.5 md:h-full order-1 md:order-2 overflow-hidden hidden md:block my-12">
+                <div className="w-full md:w-[40%] my-5 h-50 md:h-full order-1 md:order-2 overflow-hidden hidden md:block ">
                   <Image
                     src={slide.img}
                     alt={slide.title}

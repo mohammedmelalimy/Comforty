@@ -7,14 +7,8 @@ import SplashScreen from './_components/ui/Splach';
 import UserProvider from './UserProvider';
 import { ThemeProvider } from './_components/ui/ThemeProvider';
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-inter'
-});
-
 const cairo = Cairo({
-  subsets: ['arabic'],
+  subsets: ['arabic', 'latin'],
   weight: ['400', '500', '700', '900'],
   variable: '--font-cairo'
 });
@@ -39,7 +33,7 @@ export default async function RootLayout({
       lang={lang}
       dir={isArabic ? 'rtl' : 'ltr'}
       suppressHydrationWarning
-      className={`${inter.variable} ${cairo.variable}`}
+      className={`${cairo.variable}`}
     >
       <body className={`${isArabic ? 'font-arabic' : 'font-sans'} transition-colors duration-300`}>
         <ThemeProvider>

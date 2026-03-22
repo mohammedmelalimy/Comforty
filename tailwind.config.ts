@@ -7,11 +7,12 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   // tailwind.config.ts
+  // tailwind.config.ts
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
-        arabic: ['var(--font-cairo)', 'ui-sans-serif', 'system-ui']
+        arabic: ['var(--font-cairo)', 'sans-serif'],
+        sans: ['var(--font-cairo)', 'sans-serif']
       }
     }
   },

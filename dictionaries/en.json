@@ -38,5 +38,34 @@
         "buttonText": "Explore"
       }
     ]
+  },
+  "about": {
+    "hero": {
+      "title": "Crafting Comfort for Every Home",
+      "subtitle": "Discover Our Journey and Passion for Furniture Design"
+    },
+    "story": {
+      "title": "Our Story",
+      "p1": "Founded in 2010, Comforty started with a simple idea: that high-quality, beautifully designed furniture should be accessible to everyone. What began as a small workshop has grown into a leading furniture retailer, serving customers across the region.",
+      "p2": "We believe that your home is your sanctuary. Our team of skilled designers and craftsmen are dedicated to creating pieces that blend comfort, style, and durability, turning your space into a reflection of your personality."
+    },
+    "values": {
+      "title": "Our Values",
+      "v1_title": "Quality Craftsmanship",
+      "v1_desc": "We select the finest materials to ensure our furniture lasts for generations.",
+      "v2_title": "Innovative Design",
+      "v2_desc": "Our designs blend classic elegance with modern functionality.",
+      "v3_title": "Customer First",
+      "v3_desc": "Your satisfaction is our priority, from shopping to white-glove delivery."
+    },
+    "team": {
+      "title": "Meet Our Creative Team",
+      "founder": "Founder & Lead Designer",
+      "curator": "Collection Curator",
+      "craftsman": "Master Craftsman",
+      "m1": "Hossam Elshazly",
+      "m2": "Mohammed Ahmed ",
+      "m3": "Youssef Mostafa"
+    }
   }
 }
