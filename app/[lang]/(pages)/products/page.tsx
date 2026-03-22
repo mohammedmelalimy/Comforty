@@ -1,4 +1,3 @@
-import Hero from './_components/ui/Hero/Hero';
 import Image from 'next/image';
 
 interface Product {
@@ -27,15 +26,13 @@ async function getFurnitureData() {
   }
 }
 
-export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+export default async function page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const products: Product[] = await getFurnitureData();
   const isArabic = lang === 'ar';
 
   return (
     <main className="flex min-h-screen flex-col items-center py-8 gap-12 bg-gray-50 dark:bg-[#0a0a0a]">
-      <Hero lang={lang} />
-
       <section className="w-[95%] max-w-7xl mx-auto px-4" dir={isArabic ? 'rtl' : 'ltr'}>
         <div className="mb-10 text-center md:text-start">
           <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-2">

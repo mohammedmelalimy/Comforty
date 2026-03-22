@@ -4,7 +4,9 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./app/[lang]/_components/*"],
-      "@assets/*": ["./assets/*"]
+      "@assets/*": ["./assets/*"],
+      "@dictionaries/*": ["./dictionaries/*"],
+      "@lib/*": ["./lib/*"]
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],

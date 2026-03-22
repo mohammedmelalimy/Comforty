@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, Cairo } from 'next/font/google';
 import './globals.css';
 import Navbar from './_components/common/Navbar';
 import { Toaster } from '@/components/ui/sonner';
@@ -7,7 +7,17 @@ import SplashScreen from './_components/ui/Splach';
 import UserProvider from './UserProvider';
 import { ThemeProvider } from './_components/ui/ThemeProvider';
 
-const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '700'] });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-inter'
+});
+
+const cairo = Cairo({
+  subsets: ['arabic'],
+  weight: ['400', '500', '700', '900'],
+  variable: '--font-cairo'
+});
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -29,9 +39,9 @@ export default async function RootLayout({
       lang={lang}
       dir={isArabic ? 'rtl' : 'ltr'}
       suppressHydrationWarning
-      className={inter.className}
+      className={`${inter.variable} ${cairo.variable}`}
     >
-      <body className={isArabic ? 'font-arabic' : ''}>
+      <body className={`${isArabic ? 'font-arabic' : 'font-sans'} transition-colors duration-300`}>
         <ThemeProvider>
           <UserProvider>
             <Navbar lang={lang} />

@@ -1,0 +1,42 @@
+{
+  "navbar": {
+    "logo_name": "Comforty",
+    "search_placeholder": "Search for furniture, decor...",
+    "cart": "Cart",
+    "wishlist": "Wishlist",
+    "login": "Sign In",
+    "register": "Sign Up"
+  },
+  "menu": {
+    "all_categories": "All Categories",
+    "home": "Home",
+    "shop": "Shop",
+    "products": "Products",
+    "about": "About"
+  },
+  "hero": {
+    "slides": [
+      {
+        "label": "Featured 🎉",
+        "subtitle": "Top Picks for You",
+        "title": "Welcome to Our Site",
+        "description": "Discover amazing features and content tailored for you.",
+        "buttonText": "Get Started"
+      },
+      {
+        "label": "Our Services 💼",
+        "subtitle": "What We Offer",
+        "title": "Expertise for Your Needs",
+        "description": "We provide top-notch services to help you succeed.",
+        "buttonText": "Learn More"
+      },
+      {
+        "label": "Innovation 🚀",
+        "subtitle": "Think Ahead",
+        "title": "Modern Challenges, Creative Ideas",
+        "description": "Explore our creative ideas for modern challenges.",
+        "buttonText": "Explore"
+      }
+    ]
+  }
+}

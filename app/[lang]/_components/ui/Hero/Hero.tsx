@@ -1,6 +1,3 @@
-'use client';
-
-import { useParams } from 'next/navigation';
 import Img2 from '@/assets/home-decor-img-11.png';
 import Img1 from '@/assets/home-decor-img-08.png';
 import Img3 from '@/assets/special.png';
@@ -12,70 +9,33 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 import Image from 'next/image';
+import { getDictionary } from '@/lib/dictionary';
 
-const slides = [
-  {
-    label: 'Featured 🎉',
-
-    subtitle: 'Top Picks for You',
-
-    title: 'Welcome to Our Site',
-
-    description: 'Discover amazing features and content tailored for you.',
-
-    buttonText: 'Get Started',
-
-    img: Img1
-  },
-
-  {
-    label: 'Our Services 💼',
-
-    subtitle: 'What We Offer',
-
-    title: 'Expertise for Your Needs',
-
-    description: 'We provide top-notch services to help you succeed.',
-
-    buttonText: 'Learn More',
-
-    img: Img2
-  },
-
-  {
-    label: 'Innovation 🚀',
-
-    subtitle: 'Think Ahead',
-
-    title: 'Modern Challenges, Creative Ideas',
-
-    description: 'Explore our creative ideas for modern challenges.',
-
-    buttonText: 'Explore',
-
-    img: Img3
-  }
-];
-
-export default function Hero() {
-  const params = useParams();
-  const lang = params.lang as string;
+export default async function Hero({ lang }: { lang: string }) {
+  const dict = await getDictionary(lang);
   const isArabic = lang === 'ar';
+
+  // دمج الصور مع النصوص المترجمة
+  const images = [Img1, Img2, Img3];
+  const slides = dict.hero.slides.map((slide: any, i: number) => ({
+    ...slide,
+    img: images[i]
+  }));
 
   return (
     <section className="w-[95%] max-w-8xl mx-auto">
       <Carousel
         opts={{ loop: true, direction: isArabic ? 'rtl' : 'ltr' }}
         key={lang}
-        className="w-full md:h-125 rounded-3xl overflow-hidden bg-gray-200 dark:bg-[#121212] transition-colors duration-500"
+        className="w-full md:h-125 rounded-3xl overflow-hidden bg-gray-200 dark:bg-[#28282896] transition-colors duration-500"
       >
         <CarouselContent className="h-full">
-          {slides.map((slide, i) => (
+          {slides.map((slide: any, i: number) => (
             <CarouselItem key={i} className="h-full">
               <div className="flex flex-col md:flex-row h-full w-full lg:gap-50 px-8">
                 {/* Text Side */}
                 <div
-                  className={`w-full md:w-[75%] flex flex-col justify-center p-6 md:p-16 space-y-12 md:space-y-8 order-2 md:order-1 ${isArabic ? 'text-right' : 'text-left'}`}
+                  className={`w-full md:w-[75%] flex flex-col justify-center p-6 space-y-12 md:space-y-3 order-2 md:order-1 ${isArabic ? 'text-right' : 'text-left'}`}
                 >
                   <span className="px-4 py-1.5 bg-gray-200 dark:bg-teal-100 text-gray-800 dark:text-gray-500 text-xs font-bold rounded-full w-fit transition-colors">
                     {slide.label}

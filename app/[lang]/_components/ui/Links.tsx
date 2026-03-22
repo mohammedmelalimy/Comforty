@@ -2,25 +2,25 @@
 import { MenuIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useParams } from 'next/navigation'; // استيراد useParams
+import { useParams } from 'next/navigation';
 
 const Links = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const params = useParams();
   const lang = params.lang as string;
+  const isArabic = lang === 'ar';
 
+  // مصفوفة الروابط المترجمة
   const menuItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Shop', path: '/shop' },
-    { name: 'Products', path: '/products' },
-    { name: 'About', path: '/about' }
+    { name: isArabic ? 'الرئيسية' : 'Home', path: '/' },
+    { name: isArabic ? 'المتجر' : 'Shop', path: '/shop' },
+    { name: isArabic ? 'المنتجات' : 'Products', path: '/products' },
+    { name: isArabic ? 'من نحن' : 'About', path: '/about' }
   ];
 
   return (
     <nav className="w-full bg-white dark:bg-black shadow-sm border-b border-gray-300 dark:border-gray-700 relative z-50 transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:px-6">
-        {/* Left: Hamburger */}
         <button
           className="md:hidden p-2 -ml-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
@@ -33,7 +33,6 @@ const Links = () => {
           )}
         </button>
 
-        {/* MENU LINKS */}
         <ul
           className={`
             absolute md:static left-0 top-full w-full md:w-auto
@@ -48,10 +47,10 @@ const Links = () => {
             }
           `}
         >
-          {/* All Categories (Desktop Only) */}
+          {/* All Categories */}
           <li className="hidden lg:flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 transition font-medium text-black dark:text-white ml-2">
             <MenuIcon className="h-5 w-5" />
-            All Categories
+            {isArabic ? 'كل الأقسام' : 'All Categories'}
           </li>
 
           {menuItems.map((item) => (
