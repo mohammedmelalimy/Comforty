@@ -127,7 +127,7 @@
 }
 
 /* =========================
-   Base Styles
+  Base Styles
 ========================= */
 @layer base {
   *,
@@ -140,7 +140,7 @@
   body {
     @apply font-sans bg-background text-foreground h-full m-0 p-0 scroll-smooth;
     transition:
-      background-color 0.1s ease,
+      background-color 0.2s ease,
       color 0.1s ease;
   }
 }

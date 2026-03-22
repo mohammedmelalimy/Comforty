@@ -11,17 +11,30 @@ const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export const metadata: Metadata = {
   title: 'Home',
-  description:
-    'Welcome to our e-commerce platform! Explore a wide range of products and enjoy seamless shopping experience.'
+  description: 'Welcome to our e-commerce platform!'
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const isArabic = lang === 'ar';
+
   return (
-    <html lang="en" suppressHydrationWarning className={inter.className}>
-      <body>
+    <html
+      lang={lang}
+      dir={isArabic ? 'rtl' : 'ltr'}
+      suppressHydrationWarning
+      className={inter.className}
+    >
+      <body className={isArabic ? 'font-arabic' : ''}>
         <ThemeProvider>
           <UserProvider>
-            <Navbar />
+            <Navbar lang={lang} />
             <Toaster position="top-center" />
             <SplashScreen />
             {children}

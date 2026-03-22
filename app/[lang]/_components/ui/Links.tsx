@@ -2,9 +2,20 @@
 import { MenuIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useParams } from 'next/navigation'; // استيراد useParams
 
 const Links = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const params = useParams();
+  const lang = params.lang as string;
+
+  const menuItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Shop', path: '/shop' },
+    { name: 'Products', path: '/products' },
+    { name: 'About', path: '/about' }
+  ];
 
   return (
     <nav className="w-full bg-white dark:bg-black shadow-sm border-b border-gray-300 dark:border-gray-700 relative z-50 transition-colors">
@@ -43,29 +54,28 @@ const Links = () => {
             All Categories
           </li>
 
-          {['Home', 'Shop', 'Products', 'About'].map((item) => (
-            <li key={item} className="w-full md:w-auto relative">
+          {menuItems.map((item) => (
+            <li key={item.name} className="w-full md:w-auto relative">
               <Link
-                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                href={`/${lang}${item.path === '/' ? '' : item.path}`}
                 onClick={() => setIsOpen(false)}
                 className="
-        block w-full px-6 py-4 md:p-2
-        text-gray-800 dark:text-gray-200 
-        font-medium 
-        relative
-        after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 
-        after:w-0 after:bg-gray-800 dark:after:bg-gray-200 
-        after:transition-all after:duration-300
-        hover:after:w-full
-      "
+                  block w-full px-6 py-4 md:p-2
+                  text-gray-800 dark:text-gray-200 
+                  font-medium 
+                  relative
+                  after:block after:absolute after:bottom-0 after:left-0 after:h-0.5 
+                  after:w-0 after:bg-gray-800 dark:after:bg-gray-200 
+                  after:transition-all after:duration-300
+                  hover:after:w-full
+                "
               >
-                {item}
+                {item.name}
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* RIGHT SPACER FOR ALIGNMENT */}
         <div className="hidden md:flex"></div>
       </div>
     </nav>
