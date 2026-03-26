@@ -67,5 +67,82 @@
       "m2": "Mohammed Ahmed ",
       "m3": "Youssef Mostafa"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back 👋",
+      "subtitle": "Please sign in to continue to your account",
+      "email_label": "Email Address",
+      "email_placeholder": "name@example.com",
+      "password_label": "Password",
+      "password_placeholder": "••••••••",
+      "forgot_password": "Forgot Password?",
+      "create_account": "Create New Account",
+      "submit_button": "Login",
+      "loading": "Logging in...",
+      "toast_success": "Welcome back! Login successful.",
+      "toast_error": "Invalid email or password. Please try again.",
+      "errors": {
+        "email_required": "Email is required",
+        "email_invalid": "Please enter a valid email address",
+        "password_required": "Password is required",
+        "password_min": "Password must be at least 6 characters"
+      }
+    },
+    "register": {
+      "title": "Create Account",
+      "name_label": "Full Name",
+      "name_placeholder": "John Doe",
+      "email_label": "Email",
+      "email_placeholder": "john@example.com",
+      "phone_label": "Phone Number",
+      "phone_placeholder": "010XXXXXXXX",
+      "password_label": "Password",
+      "password_placeholder": "••••••••",
+      "rePassword_label": "Confirm Password",
+      "rePassword_placeholder": "••••••••",
+      "submit_button": "Register Now",
+      "toast_success": "Account created! Please login.",
+      "toast_error": "Registration failed. Try again.",
+      "errors": {
+        "name_min": "Name must be at least 2 characters",
+        "email_invalid": "Invalid email address",
+        "phone_min": "Phone must be at least 10 digits",
+        "phone_digits": "Only numbers allowed",
+        "password_min": "Min 6 characters required",
+        "password_regex": "Must contain at least one letter and one number",
+        "password_mismatch": "Passwords don't match"
+      }
+    },
+    "reset": {
+      "title": "Reset Password",
+      "subtitle": "Enter your email and new password to secure your account",
+      "email_label": "Email Address",
+      "email_placeholder": "you@example.com",
+      "password_label": "New Password",
+      "submit_button": "Update Password",
+      "toast_success": "Password updated successfully!",
+      "toast_error": "Failed to reset. Check your email or connection.",
+      "errors": {
+        "email_required": "Email is required",
+        "email_invalid": "Enter a valid email",
+        "password_min": "Password must be at least 6 characters",
+        "password_regex": "Must include at least one letter and one number"
+      }
+    },
+    "forget": {
+      "title": "Forgot Password?",
+      "subtitle": "No worries! Enter your email below and we will send you a reset code.",
+      "email_label": "Email Address",
+      "email_placeholder": "you@example.com",
+      "submit_button": "Send Reset Code",
+      "toast_success": "Reset code sent successfully!",
+      "toast_error": "Email not found or invalid.",
+      "toast_network_error": "Something went wrong. Please try again.",
+      "errors": {
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      }
+    }
   }
 }

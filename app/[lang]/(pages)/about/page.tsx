@@ -25,7 +25,7 @@ export default async function AboutUsPage({ params }: { params: Promise<{ lang: 
   ];
 
   return (
-    <main className={`w-full ${isArabic ? 'font-arabic' : 'font-sans'}`}>
+    <main className={`w-full `}>
       {/* 1. Hero Section */}
       <section className="w-full bg-gray-100 dark:bg-neutral-900 py-16 md:py-24 text-center">
         <div className="container mx-auto px-4 max-w-5xl">

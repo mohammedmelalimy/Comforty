@@ -6,13 +6,11 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
-  // tailwind.config.ts
-  // tailwind.config.ts
   theme: {
     extend: {
       fontFamily: {
-        arabic: ['var(--font-cairo)', 'sans-serif'],
-        sans: ['var(--font-cairo)', 'sans-serif']
+        cairo: ['var(--font-cairo)', 'sans-serif'],
+        arabic: ['var(--font-cairo)', 'sans-serif']
       }
     }
   },

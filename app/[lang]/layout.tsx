@@ -1,4 +1,4 @@
-import { Inter, Cairo } from 'next/font/google';
+import { Cairo } from 'next/font/google';
 import './globals.css';
 import Navbar from './_components/common/Navbar';
 import { Toaster } from '@/components/ui/sonner';
@@ -9,7 +9,7 @@ import { ThemeProvider } from './_components/ui/ThemeProvider';
 
 const cairo = Cairo({
   subsets: ['arabic', 'latin'],
-  weight: ['400', '500', '700', '900'],
+  weight: ['300', '400', '500', '700', '900'],
   variable: '--font-cairo'
 });
 
@@ -32,16 +32,17 @@ export default async function RootLayout({
     <html
       lang={lang}
       dir={isArabic ? 'rtl' : 'ltr'}
-      suppressHydrationWarning
       className={`${cairo.variable}`}
+      suppressHydrationWarning
     >
-      <body className={`${isArabic ? 'font-arabic' : 'font-sans'} transition-colors duration-300`}>
+      <body
+        className={`font-sans transition-colors duration-300 min-h-screen bg-white dark:bg-black`}
+      >
         <ThemeProvider>
           <UserProvider>
             <Navbar lang={lang} />
             <Toaster position="top-center" />
-            <SplashScreen />
-            {children}
+            <main className="pt-32">{children}</main>
           </UserProvider>
         </ThemeProvider>
       </body>

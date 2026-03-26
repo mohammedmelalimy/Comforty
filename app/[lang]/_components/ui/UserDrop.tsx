@@ -15,16 +15,16 @@ export default function DropdownMenuIcons() {
   };
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild className="cursor-pointer">
         <User />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
+        <DropdownMenuItem className="cursor-pointer">
           <UserIcon />
           Profile
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem variant="destructive" onClick={handleLogout}>
+        <DropdownMenuItem variant="destructive" onClick={handleLogout} className="cursor-pointer">
           <LogOutIcon />
           Log out
         </DropdownMenuItem>

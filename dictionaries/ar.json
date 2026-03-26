@@ -67,5 +67,82 @@
       "m2": "محمد أحمد ",
       "m3": "يوسف مصطفى"
     }
+  },
+  "auth": {
+    "login": {
+      "title": "أهلا بيك مرة تانية👋",
+      "subtitle": "يرجى تسجيل الدخول للمتابعة إلى حسابك",
+      "email_label": "البريد الإلكتروني",
+      "email_placeholder": "name@example.com",
+      "password_label": "كلمة المرور",
+      "password_placeholder": "••••••••",
+      "forgot_password": "نسيت كلمة المرور؟",
+      "create_account": "إنشاء حساب جديد",
+      "submit_button": "تسجيل الدخول",
+      "loading": "جاري الدخول...",
+      "toast_success": "أهلاً بك مجدداً! تم تسجيل الدخول بنجاح.",
+      "toast_error": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+      "errors": {
+        "email_required": "البريد الإلكتروني مطلوب",
+        "email_invalid": "يرجى إدخال بريد إلكتروني صحيح",
+        "password_required": "كلمة المرور مطلوبة",
+        "password_min": "يجب أن تكون كلمة المرور 6 أحرف على الأقل"
+      }
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "name_label": "الاسم بالكامل",
+      "name_placeholder": "دخل اسمك هنا",
+      "email_label": "البريد الإلكتروني",
+      "email_placeholder": "name@example.com",
+      "phone_label": "رقم الهاتف",
+      "phone_placeholder": "010XXXXXXXX",
+      "password_label": "كلمة المرور",
+      "password_placeholder": "••••••••",
+      "rePassword_label": "تأكيد كلمة المرور",
+      "rePassword_placeholder": "••••••••",
+      "submit_button": "سجل الآن",
+      "toast_success": "تم إنشاء الحساب بنجاح! يمكنك الدخول الآن.",
+      "toast_error": "فشل التسجيل. يرجى المحاولة مرة أخرى.",
+      "errors": {
+        "name_min": "الاسم يجب أن يكون حرفين على الأقل",
+        "email_invalid": "البريد الإلكتروني غير صحيح",
+        "phone_min": "رقم الهاتف يجب أن يكون 10 أرقام على الأقل",
+        "phone_digits": "يجب إدخال أرقام فقط",
+        "password_min": "كلمة المرور 6 أحرف على الأقل",
+        "password_regex": "يجب أن تحتوي على حرف ورقم واحد على الأقل",
+        "password_mismatch": "كلمتا المرور غير متطابقتين"
+      }
+    },
+    "reset": {
+      "title": "استعادة كلمة المرور",
+      "subtitle": "أدخل بريدك الإلكتروني وكلمة المرور الجديدة لتأمين حسابك",
+      "email_label": "البريد الإلكتروني",
+      "email_placeholder": "name@example.com",
+      "password_label": "كلمة المرور الجديدة",
+      "submit_button": "تحديث كلمة المرور",
+      "toast_success": "تم تحديث كلمة المرور بنجاح!",
+      "toast_error": "فشل التحديث. تأكد من البيانات أو الاتصال.",
+      "errors": {
+        "email_required": "البريد الإلكتروني مطلوب",
+        "email_invalid": "أدخل بريد إلكتروني صحيح",
+        "password_min": "كلمة المرور 6 أحرف على الأقل",
+        "password_regex": "يجب أن تحتوي على حرف ورقم واحد على الأقل"
+      }
+    },
+    "forget": {
+      "title": "نسيت كلمة المرور؟",
+      "subtitle": "لا تقلق! أدخل بريدك الإلكتروني وسنرسل لك كود لإعادة التعيين.",
+      "email_label": "البريد الإلكتروني",
+      "email_placeholder": "name@example.com",
+      "submit_button": "إرسال كود التعيين",
+      "toast_success": "تم إرسال الكود بنجاح!",
+      "toast_error": "البريد الإلكتروني غير مسجل أو غير صحيح.",
+      "toast_network_error": "حدث خطأ ما، يرجى المحاولة مرة أخرى.",
+      "errors": {
+        "required": "البريد الإلكتروني مطلوب",
+        "invalid": "يرجى إدخال بريد إلكتروني صحيح"
+      }
+    }
   }
 }

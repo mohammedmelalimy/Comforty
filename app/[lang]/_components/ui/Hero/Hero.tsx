@@ -26,7 +26,7 @@ export default async function Hero({ lang }: { lang: string }) {
       <Carousel
         opts={{ loop: true, direction: isArabic ? 'rtl' : 'ltr' }}
         key={lang}
-        className="w-full md:h-125 rounded-3xl overflow-hidden bg-gray-200 dark:bg-[#28282896] transition-colors duration-500"
+        className="w-full h-96 md:h-[50%] lg:h-125 rounded-3xl overflow-hidden bg-gray-200 dark:bg-[#28282896] transition-colors duration-500"
       >
         <CarouselContent className="h-full">
           {slides.map((slide: any, i: number) => (
@@ -34,7 +34,7 @@ export default async function Hero({ lang }: { lang: string }) {
               <div className="flex flex-col md:flex-row h-full w-full px-8">
                 {/* Text Side */}
                 <div
-                  className={`w-full md:w-[75%] flex flex-col justify-center p-6 space-y-12 md:space-y-3 order-2 md:order-1 ${isArabic ? 'text-right' : 'text-left'}`}
+                  className={`w-full md:w-[75%] flex flex-col justify-center p-6 space-y-7 lg-space-y-8 order-2 md:order-1 ${isArabic ? 'text-right' : 'text-left'}`}
                 >
                   <span className="px-4 py-1.5 bg-gray-200 dark:bg-teal-100 text-gray-800 dark:text-gray-500 text-xs font-bold rounded-full w-fit transition-colors">
                     {slide.label}

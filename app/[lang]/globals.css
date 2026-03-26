@@ -53,6 +53,9 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* =========================
+   Dark Mode Theme
+========================= */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -72,6 +75,8 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
+
+  /* Sidebar */
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -86,7 +91,8 @@
    Theme Inline Variables
 ========================= */
 @theme inline {
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-cairo); /* FIXED */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -106,7 +112,6 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Sidebar */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -127,9 +132,19 @@
 }
 
 /* =========================
-  Base Styles
+   Base
 ========================= */
 @layer base {
+  [lang='ar'] {
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  [lang='ar'] h1,
+  [lang='ar'] h2 {
+    line-height: 1.3;
+  }
+
   *,
   *::before,
   *::after {
@@ -138,7 +153,8 @@
 
   html,
   body {
-    @apply font-sans bg-background text-foreground h-full m-0 p-0 scroll-smooth;
+    @apply font-sans bg-background text-foreground h-full m-0 p-0;
+    scroll-behavior: smooth;
     transition:
       background-color 0.2s ease,
       color 0.2s ease;
@@ -148,15 +164,12 @@
 /* =========================
    Scrollbar Hidden
 ========================= */
-/* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   display: none;
 }
-/* Firefox */
 html {
   scrollbar-width: none;
 }
-/* IE & old Edge */
 body {
   -ms-overflow-style: none;
 }

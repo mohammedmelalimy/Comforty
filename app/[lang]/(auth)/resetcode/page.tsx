@@ -5,13 +5,13 @@ import * as z from 'zod';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+import { FormField } from '@/components/ui/form';
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot
-} from '../../../components/ui/input-otp';
-import { FormField } from '../../../components/ui/form';
+} from '../../../../components/ui/input-otp';
 
 const resetCodeSchema = z.object({
   resetCode: z.string('Invalid Code')

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 interface Product {
@@ -11,7 +12,16 @@ interface Product {
   image: string;
   category: string;
 }
-
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  return {
+    title: lang === 'ar' ? 'منتجاتنا | كومفورتي' : 'Our Products | Comforty',
+    description:
+      lang === 'ar'
+        ? 'اكتشف تشكيلتنا الواسعة من الأثاث العصري المصمم بعناية لمنزلك.'
+        : 'Explore our wide range of modern furniture carefully designed for your home.'
+  } as Metadata;
+}
 async function getFurnitureData() {
   try {
     const res = await fetch('https://api.npoint.io/664dbf69f3cc3b9c6544', {
