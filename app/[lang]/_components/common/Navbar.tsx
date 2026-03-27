@@ -91,7 +91,7 @@ export default async function Navbar({ lang }: { lang: string }) {
 
       <div className="relative z-20 w-full bg-white dark:bg-black border-b border-gray-100 dark:border-neutral-900">
         <div className="container mx-auto">
-          <Links />
+          <Links lang={lang} />
         </div>
       </div>
     </header>

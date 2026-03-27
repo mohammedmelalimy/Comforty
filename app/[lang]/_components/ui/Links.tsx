@@ -2,12 +2,14 @@
 import { MenuIcon, XIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
 
-const Links = () => {
+interface LinksProps {
+  lang: string;
+}
+
+const Links = ({ lang }: LinksProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const params = useParams();
-  const lang = params.lang as string;
+
   const isArabic = lang === 'ar';
 
   const menuItems = [
@@ -18,7 +20,7 @@ const Links = () => {
   ];
 
   return (
-    <nav className="w-full bg-white dark:bg-black shadow-sm border-b border-gray-300 dark:border-gray-700 relative  transition-colors">
+    <nav className="w-full bg-white dark:bg-black shadow-sm border-b border-gray-300 dark:border-gray-700 relative transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:px-6">
         <button
           className="md:hidden p-2 -ml-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
