@@ -2,6 +2,7 @@ import { getDictionary } from '@/lib/dictionary';
 import Image from 'next/image';
 import Img from '@/assets/comforty.webp';
 import img0 from '@/assets/dummy.jpg';
+import NoAutoScroll from '../../_components/ui/AutoScroll';
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   return {
@@ -26,8 +27,9 @@ export default async function AboutUsPage({ params }: { params: Promise<{ lang: 
 
   return (
     <main className={`w-full `}>
+      <NoAutoScroll />
       {/* 1. Hero Section */}
-      <section className="w-full bg-gray-100 dark:bg-neutral-900 py-16 md:py-24 text-center">
+      <section className="w-full bg-gray-100 dark:bg-neutral-900 py-12 text-center">
         <div className="container mx-auto px-4 max-w-5xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
             {dict.about.hero.title}

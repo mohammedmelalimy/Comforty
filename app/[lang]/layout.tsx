@@ -3,7 +3,6 @@ import './globals.css';
 import Navbar from './_components/common/Navbar';
 import { Toaster } from '@/components/ui/sonner';
 import { Metadata } from 'next';
-import SplashScreen from './_components/ui/Splach';
 import UserProvider from './UserProvider';
 import { ThemeProvider } from './_components/ui/ThemeProvider';
 
@@ -35,14 +34,12 @@ export default async function RootLayout({
       className={`${cairo.variable}`}
       suppressHydrationWarning
     >
-      <body
-        className={`font-sans transition-colors duration-300 min-h-screen bg-white dark:bg-black`}
-      >
+      <body className="min-h-screen flex flex-col transition-colors duration-300 bg-white dark:bg-black">
         <ThemeProvider>
           <UserProvider>
             <Navbar lang={lang} />
             <Toaster position="top-center" />
-            <main className="pt-32">{children}</main>
+            <main className="flex-1 pt-72 lg:pt-44">{children}</main>
           </UserProvider>
         </ThemeProvider>
       </body>

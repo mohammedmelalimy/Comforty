@@ -9,7 +9,9 @@ export default function Loader({ size = 40, className }: { size?: number; classN
       <div
         className="animate-spin rounded-full border-4 border-gray-300 border-t-gray-900"
         style={{ width: size, height: size }}
-      />
+      >
+        <span className="sr-only">Loading...</span>
+      </div>
     </div>
   );
 }

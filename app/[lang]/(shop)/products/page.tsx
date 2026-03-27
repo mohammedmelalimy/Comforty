@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import NoAutoScroll from '../../_components/ui/AutoScroll';
 
 interface Product {
   id: number;
@@ -42,8 +43,9 @@ export default async function page({ params }: { params: Promise<{ lang: string 
   const isArabic = lang === 'ar';
 
   return (
-    <main className="flex min-h-screen flex-col items-center py-8 gap-12 bg-gray-50 dark:bg-[#0a0a0a]">
-      <section className="w-[95%] max-w-7xl mx-auto px-4" dir={isArabic ? 'rtl' : 'ltr'}>
+    <main className="flex min-h-screen flex-col items-center gap-12 bg-gray-50 dark:bg-[#0a0a0a]">
+      <NoAutoScroll />
+      <section className="w-[95%] max-w-7xl mx-auto px-4 pt-11" dir={isArabic ? 'rtl' : 'ltr'}>
         <div className="mb-10 text-center md:text-start">
           <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-2">
             {isArabic ? 'تشكيلة الأثاث العصري' : 'Modern Furniture Collection'}

@@ -10,7 +10,6 @@ const Links = () => {
   const lang = params.lang as string;
   const isArabic = lang === 'ar';
 
-  // مصفوفة الروابط المترجمة
   const menuItems = [
     { name: isArabic ? 'الرئيسية' : 'Home', path: '/' },
     { name: isArabic ? 'المتجر' : 'Shop', path: '/shop' },
@@ -19,7 +18,7 @@ const Links = () => {
   ];
 
   return (
-    <nav className="w-full bg-white dark:bg-black shadow-sm border-b border-gray-300 dark:border-gray-700 relative z-50 transition-colors">
+    <nav className="w-full bg-white dark:bg-black shadow-sm border-b border-gray-300 dark:border-gray-700 relative  transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:px-6">
         <button
           className="md:hidden p-2 -ml-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -68,6 +67,7 @@ const Links = () => {
                   after:transition-all after:duration-300
                   hover:after:w-full
                 "
+                scroll={false}
               >
                 {item.name}
               </Link>

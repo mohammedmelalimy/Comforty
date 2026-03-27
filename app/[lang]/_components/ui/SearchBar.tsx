@@ -40,7 +40,7 @@ const SearchBar = ({ lang, dict }: { lang: string; dict: any }) => {
         />
       </form>
       {results.length > 0 && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-full md:w-[70%] bg-white dark:bg-neutral-900 shadow-xl border dark:border-neutral-700 mt-2 rounded-lg z-100 max-h-60 overflow-y-auto">
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-full md:w-[70%] bg-white dark:bg-neutral-900 shadow-xl border dark:border-neutral-700 mt-2 rounded-lg z-[9999] max-h-60 overflow-y-auto">
           {results.map((product: any) => (
             <div
               key={product.id}
